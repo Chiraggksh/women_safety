@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Women Safety Complaint Portal</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(to bottom right, #ffdde1, #ee9ca7);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        header {
+    display: flex;
+    justify-content: center;
+    background: linear-gradient(to right, #d72c6c, #9b1b5c);
+    padding: 20px 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline-block;
+}
+
+nav ul li a {
+    display: block;
+    background: white;
+    color: #9b1b5c;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 15px 20px;
+    border-radius: 12px;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+nav ul li a:hover {
+    background: #9b1b5c;
+    color: white;
+    transform: scale(1.1);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+
+        .navbar {
+            background: linear-gradient(to right, #d72c6c, #9b1b5c);
+            padding: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar-brand {
+            color: black;
+            font-size: 24px;
+            font-weight: 600;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            border-radius: 15px;
+            margin-top: 40px;
+            max-width: 800px;
+            flex: 1;
+        }
+
+        h2, h3 {
+            color: #9b1b5c;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        .form-label {
+            font-weight: 500;
+            color: #333;
+        }
+
+        .form-control, .form-select {
+            border-radius: 10px;
+            border: 1px solid #ccc;
+            padding: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .form-control:focus, .form-select:focus {
+            border-color: #d72c6c;
+            box-shadow: 0 0 8px rgba(215, 44, 108, 0.3);
+        }
+
+        .btn-primary {
+            background: linear-gradient(to right, #d72c6c, #9b1b5c);
+            border: none;
+            border-radius: 25px;
+            padding: 12px 25px;
+            font-size: 16px;
+            font-weight: 500;
+            width: 100%;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background: linear-gradient(to right, #9b1b5c, #d72c6c);
+            transform: scale(1.05);
+        }
+
+        .alert {
+            border-radius: 10px;
+            font-size: 16px;
+            padding: 12px;
+            font-weight: 500;
+            text-align: center;
+        }
+
+        .priority-chart {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin-top: 40px;
+        }
+
+        canvas {
+            display: block;
+            margin: auto;
+        }
+        #red-zones-table {
+            margin-top: 20px;
+        }
+
+        #red-zones-table th,
+        #red-zones-table td {
+            text-align: center; /* Center the table content */
+            vertical-align: middle; /* Center content vertically */
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="page2.html">Map</a></li>
+                <li><a href="page4.html">Alert</a></li>
+                <li><a href="SOS.html">Contact Us</a></li>
+                <li><a href="frontend.html">Report Incident</a></li>
+            </ul>
+        </nav>
+    </header>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand" href="#">Women Safety Portal</a>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <h2>Women Safety Complaint Portal</h2>
+        <h3>Report an Incident</h3>
+        <form id="complaintForm">
+            <div class="mb-3">
+                <label for="problemType" class="form-label">Issue Type</label>
+                <select id="problemType" class="form-select" required>
+                    <option value="Harassment">Harassment</option>
+                    <option value="Assault">Assault</option>
+                    <option value="Unsafe Area">Unsafe Area</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="severity" class="form-label">Severity (1-5)</label>
+                <input type="number" id="severity" class="form-control" min="1" max="5" required>
+            </div>
+            <div class="mb-3">
+                <label for="description" class="form-label">Description</label>
+                <textarea id="description" class="form-control" rows="3" required></textarea>
+            </div>
+            <div class="mb-3">
+                <label for="location" class="form-label">Location</label>
+                <input type="text" id="location" class="form-control" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+        <div id="alertMessage" class="mt-4"></div>
+    </div>
+
+    <div class="container mt-5">
+        <h3>Complaint Priority Chart</h3>
+        <div class="priority-chart">
+            <canvas id="priorityChart" width="400" height="200"></canvas>
+        </div>
+    </div>
+
+    <div class="container mt-5">
+        <h3>Red Zones</h3>
+        <table class="table table-bordered" id="red-zones-table">
+            <thead>
+                <tr>
+                    <th>Location</th>
+                    <th>Priority</th>
+                    <th>Complaint Count</th>
+                </tr>
+            </thead>
+            <tbody>
+                </tbody>
+        </table>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        document.getElementById('complaintForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const problemType = document.getElementById('problemType').value;
+            const severity = document.getElementById('severity').value;
+            const description = document.getElementById('description').value;
+            const location = document.getElementById('location').value;
+            
+            fetch('http://127.0.0.1:5000/submit', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({ problemType, severity, description, location })
+            })
+            .then(response => response.json())
+            .then(data => {
+                displayAlert(data.message);
+                loadChart();
+            })
+            .catch(() => displayAlert("Error submitting complaint. Please try again.", 'error'));
+        });
+
+        function displayAlert(message, type = 'success') {
+            const alertDiv = document.getElementById('alertMessage');
+            alertDiv.innerHTML = `<div class="alert alert-${type === 'error' ? 'danger' : 'success'}">${message}</div>`;
+            setTimeout(() => alertDiv.innerHTML = '', 5000);
+        }
+
+        function loadChart() {
+            fetch('http://127.0.0.1:5000/chart-data')
+            .then(response => response.json())
+            .then(data => {
+                new Chart(document.getElementById('priorityChart').getContext('2d'), {
+                    type: 'bar',
+                    data: { labels: data.labels, datasets: [{ label: 'Red Points', data: data.data, backgroundColor: '#d72c6c' }] },
+                });
+            });
+        }
+
+        loadChart();
+
+        function loadRedZones() {
+            fetch('http://127.0.0.1:5000/red-zones')
+                .then(response => response.json())
+                .then(redZones => {
+                    const tableBody = document.querySelector('#red-zones-table tbody');
+                    tableBody.innerHTML = ''; // Clear existing rows
+
+                    redZones.forEach(zone => {
+                        const row = tableBody.insertRow();
+                        const locationCell = row.insertCell();
+                        const priorityCell = row.insertCell();
+                        const countCell = row.insertCell();
+
+                        locationCell.textContent = zone.location;
+                        priorityCell.textContent = zone.priority;
+                        countCell.textContent = zone.count;
+                    });
+                });
+        }
+
+        loadRedZones(); // Load red zones initially
+        setInterval(loadRedZones, 5000);
+    </script>
+</body>
+</html>

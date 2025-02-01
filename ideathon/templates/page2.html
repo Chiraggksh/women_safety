@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Open+Sans&display=swap" rel="stylesheet">
+    
+    <title>Safest Route Finder</title>
+    <link rel="stylesheet" href="page2.css">
+    
+    <!-- Leaflet CSS & JS for Map -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@turf/turf@6"></script>
+
+
+    <style>
+        #map {
+            width: 100%;
+            height: 500px;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            text-align: center;
+        }
+        input {
+            padding: 10px;
+            margin: 5px;
+            width: 80%;
+            font-size: 16px;
+        }
+        button {
+            padding: 10px;
+            margin: 10px;
+            background-color:;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .button-container {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+        #compareRoutes {
+            background-color: lightblue;
+            display: none; /* Initially hidden */
+        }
+        .red-zone {
+            background-color: rgba(255, 0, 0, 0.3); /* Red with transparency */
+            position: absolute;
+            z-index: 1; /* Ensure it's above the map tiles */
+            pointer-events: none; /* Allow map interaction */
+        }
+    </style>
+</head>
+<body id="body">
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="page2.html">Map</a></li>
+                <li><a href="page4.html">Alert</a></li>
+                <li><a href="SOS.html">Contact Us</a></li>
+                <li><a href="frontend.html">Report Incident</a></li>
+            </ul>
+        </nav>
+    </header>
+<br>
+    <h1 style="text-align: center;">Find the Pink Route</h1>
+
+    <div class="container">
+        <input type="text" id="from" placeholder="Enter Starting Location">
+        <input type="text" id="to" placeholder="Enter Destination">
+        <div class="button-container">
+            <button id="findRoute">Find Route</button>
+            <button id="compareRoutes">Show Blue Route (Google Maps)</button>
+        </div>
+    </div>
+
+    <!-- Map Container -->
+    <div id="map"></div>
+
+    <!-- Include JS File -->
+    <script src="page2.js"></script>
+
+    <footer id="last">
+        <div class="social-media">
+            <a href="#">Facebook</a>
+            <a href="#">Twitter</a>
+            <a href="#">Instagram</a>
+        </div>
+        <div class="quick-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+        </div>
+        <p>Empowering safety through technology.</p>
+    </footer>
+</body>
+</html>

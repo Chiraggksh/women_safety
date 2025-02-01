@@ -1,0 +1,197 @@
+/* style.css */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+
+body {
+    background-color: #f8f8f8; /* Very light gray */
+    color: #333;
+}
+
+header {
+    background-color: #673ab7; /* Deep violet */
+    padding: 20px;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+}
+
+nav ul li {
+    margin: 0 25px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 1.1em;
+    transition: color 0.3s ease-in-out;
+}
+
+nav ul li a:hover {
+    color: #ffc107; /* Golden yellow hover */
+}
+
+.hero {
+    background: linear-gradient(rgba(103, 58, 183, 0.6), rgba(103, 58, 183, 0.6)), url('women-safety-image.jpg') center/cover no-repeat; /* Replace with a relevant image */
+    color: white;
+    text-align: center;
+    padding: 150px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+.hero p {
+    font-size: 1.3em;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.cta-button {
+    background-color: #ffc107; /* Golden yellow */
+    color: #673ab7; /* Deep violet text */
+    border: none;
+    padding: 14px 35px;
+    font-size: 1.2em;
+    cursor: pointer;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    transform: scale(1.05);
+    background-color: #ffb300; /* Darker yellow */
+}
+
+.features {
+    display: flex;
+    justify-content: space-around;
+    padding: 80px 20px;
+    gap: 30px;
+    background-color: #fff; /* White background for features */
+    padding: 60px;
+}
+
+.card {
+    background-color: #673ab7; /* Deep violet cards */
+    border-radius: 12px;
+    padding: 30px;
+    text-align: center;
+    width: 300px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+}
+
+.card img {
+    width: 50px;
+    height: 50px;
+    filter: invert(100%); /* White icons */
+    margin-bottom: 15px;
+}
+
+.card h3 {
+    font-size: 1.4em;
+    margin-bottom: 15px;
+    color: white;
+}
+
+.card p {
+    font-size: 1em;
+    color: #eee; /* Lighter text */
+    line-height: 1.6;
+}
+
+.testimonials {
+    background-color: #f8f8f8; /* Light gray background for testimonials */
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.testimonials h2 {
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.testimonial {
+    background-color: white;
+    padding: 20px;
+    margin: 20px auto; /* Center the testimonials */
+    max-width: 600px;  /* Adjust width as needed */
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+    text-align: left; /* Align text within testimonials to the left */
+}
+
+.testimonial p {
+    color: #555;
+    line-height: 1.6;
+}
+
+.testimonial-author {
+    color: #888;
+    font-style: italic;
+    margin-top: 10px;
+    text-align: right; /* Align author to the right */
+}
+
+.foot {
+    background-color: #673ab7; /* Deep violet */
+    padding: 40px 0; /* Added padding */
+    text-align: center;
+    color: white;
+}
+
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between; /* Distribute items */
+    align-items: center; /* Vertically center */
+    padding: 0 20px; /* Add horizontal padding */
+}
+
+.social-media,
+.quick-links {
+    display: flex;
+}
+
+.social-media a,
+.quick-links a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: white;
+    font-size: 1em;
+    transition: color 0.3s ease;
+}
+
+.social-media a:hover,
+.quick-links a:hover {
+    color: #ffc107; /* Yellow hover */
+}
+
+#last {
+    font-size: 1em;
+    color: white;
+}
